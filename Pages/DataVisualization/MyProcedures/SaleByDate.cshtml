@@ -1,0 +1,79 @@
+﻿@page
+@model ProjectObryckiJustin.Pages.DataVisualization.MyProcedures.SaleByDateModel
+@{
+    ViewData["Title"] = "Sale By Date";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1> Sale By Date </h1>
+
+<form class="form-horizontal" method="post" id="moi">
+    <div class="form-group">
+        <label for="StartTime" class="col-sm-2 control-label">Start Time</label>
+        <div class="col-sm-10">
+            <input type="date" id="StartTime" class="form-control" value="" name="StartTime">
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="EndTime" class="col-sm-2 control-label">End Date</label>
+        <div class="col-sm-10">
+            <input type="date" id="EndTime" class="form-control" value="" name="EndTime">
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary">Get Order Data</button>
+        </div>
+    </div>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.spSaleByDate[0].OrderDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spSaleByDate[0].PartName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spSaleByDate[0].TotalCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spSaleByDate[0].Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spSaleByDate[0].Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spSaleByDate[0].Customer)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.spSaleByDate)
+        {
+            <tr>
+                <th>
+                    @Html.DisplayFor(modelItem => item.OrderDate)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.PartName)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.TotalCost)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Quantity)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Employee)
+                </th>
+                <th>
+                    @Html.DisplayFor(modelItem => item.Customer)
+                </th>
+            </tr>
+        }
+    </tbody>
+</table>
+

@@ -1,0 +1,50 @@
+﻿@page
+@model ProjectObryckiJustin.Pages.tblPart.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Pages/Shared/CRUD_Layout.cshtml";
+}
+
+<h1>Part Details</h1>
+
+<div>
+    <h4>TblPart</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPart.PartName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPart.PartName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPart.Cost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPart.Cost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPart.Color)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPart.Color)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPart.PartDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPart.PartDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPart.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPart.Type)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-primary" asp-page="./Edit" asp-route-id="@Model.TblPart?.PartId">Edit</a> |
+    <a class="btn btn-primary" asp-page="./Index">Back to List</a>
+</div>

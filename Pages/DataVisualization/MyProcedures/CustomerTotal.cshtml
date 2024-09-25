@@ -1,0 +1,49 @@
+﻿@page
+@model ProjectObryckiJustin.Pages.DataVisualization.MyProcedures.CustomerTotalModel
+@{
+    ViewData["Title"] = "Customer Total";
+    Layout = "~/Pages/Shared/SP_Layout.cshtml";
+    <script src="https://www.gstatic.com/charts/loader.js"> </script>
+    <script src="~/js/Customerchart.js"></script>
+    <script>google.charts.setOnLoadCallback(myPieChartTotals);</script>
+}
+
+<h1> Customer Total's </h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.spCustomerTotal[0].CustomerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.spCustomerTotal[0].TotalSpent)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.spCustomerTotal)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CustomerName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalSpent)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div id="mydata" height="400" style="display:none">
+    @foreach (var item in Model.spCustomerTotal)
+    {
+        @string.Concat(" ,['", item.CustomerName, " ', ", Math.Round(@item.TotalSpent, 2), "]")
+    }
+</div>
+
+<div id="myBarChart"></div>
+<br />
+<div id="myPieChart"></div>
+<br />
+<div id="myScatterChart"></div>

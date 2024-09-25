@@ -1,0 +1,55 @@
+﻿@page
+@model ProjectObryckiJustin.Pages.tblEmployee.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/CRUD_Layout.cshtml";
+}
+
+<h1>Create New Employee Entry</h1>
+
+<h4>TblEmployee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="TblEmployee.FirstName" class="control-label"></label>
+                <input asp-for="TblEmployee.FirstName" class="form-control" />
+                <span asp-validation-for="TblEmployee.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblEmployee.LastName" class="control-label"></label>
+                <input asp-for="TblEmployee.LastName" class="form-control" />
+                <span asp-validation-for="TblEmployee.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblEmployee.Gender" class="control-label"></label>
+                <input asp-for="TblEmployee.Gender" class="form-control" />
+                <span asp-validation-for="TblEmployee.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblEmployee.PhoneNumber" class="control-label"></label>
+                <input asp-for="TblEmployee.PhoneNumber" class="form-control" />
+                <span asp-validation-for="TblEmployee.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblEmployee.Address" class="control-label"></label>
+                <input asp-for="TblEmployee.Address" class="form-control" />
+                <span asp-validation-for="TblEmployee.Address" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

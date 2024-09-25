@@ -1,0 +1,53 @@
+﻿@page
+@model ProjectObryckiJustin.Pages.tblPart.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Pages/Shared/CRUD_Layout.cshtml";
+}
+
+<h1>Delete Part</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TblPart</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPart.PartName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPart.PartName)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPart.Cost)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPart.Cost)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPart.Color)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPart.Color)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPart.PartDescription)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPart.PartDescription)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.TblPart.Type)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TblPart.Type)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="TblPart.PartId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a class="btn btn-primary" asp-page="./Index">Back to List</a>
+    </form>
+</div>

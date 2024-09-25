@@ -1,0 +1,56 @@
+﻿@page
+@model ProjectObryckiJustin.Pages.tblPart.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Pages/Shared/CRUD_Layout.cshtml";
+}
+
+<h1>Edit Part</h1>
+
+<h4>TblPart</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TblPart.PartId" />
+            <div class="form-group">
+                <label asp-for="TblPart.PartName" class="control-label"></label>
+                <input asp-for="TblPart.PartName" class="form-control" />
+                <span asp-validation-for="TblPart.PartName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPart.Cost" class="control-label"></label>
+                <input asp-for="TblPart.Cost" class="form-control" />
+                <span asp-validation-for="TblPart.Cost" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPart.Color" class="control-label"></label>
+                <input asp-for="TblPart.Color" class="form-control" />
+                <span asp-validation-for="TblPart.Color" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPart.PartDescription" class="control-label"></label>
+                <input asp-for="TblPart.PartDescription" class="form-control" />
+                <span asp-validation-for="TblPart.PartDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TblPart.Type" class="control-label"></label>
+                <input asp-for="TblPart.Type" class="form-control" />
+                <span asp-validation-for="TblPart.Type" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary" asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,43 @@
+﻿buy-card {
+    display: grid;
+    grid-template:
+        "Image"
+        "Part_Name"
+        "Part_Desc"
+        "Part_Cost"
+        "Buy_Button";
+    box-shadow: 1px 1px 10px 0px #b2b2b2;
+    justify-items: center;
+    margin: 20px;
+    padding: 20px;
+    column-gap: 10px;
+    max-width: 100%;
+    background-color: white;
+}
+
+img {
+    width: 15%;
+    height: 100%;
+}
+
+buy-card .Image {
+    grid-area: Image;
+    
+}
+
+buy-card .Part_Name {
+    grid-area: Part_Name;
+}
+
+buy-card .Part_Desc {
+    grid-area: Part_Desc;
+}
+
+buy-card .Part_Cost {
+    grid-area: Part_Cost;
+}
+
+buy-card .Buy_Button {
+       grid-area: Buy_Button;
+}
+

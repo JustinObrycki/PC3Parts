@@ -1,0 +1,65 @@
+﻿@page
+@model ProjectObryckiJustin.Pages.DataVisualization.MyViews.EmployeeSalesModel
+@{
+    ViewData["Title"] = "Employee Sales";
+    Layout = "~/Pages/Shared/Views_Layout.cshtml";
+}
+
+<h1> Employee Sales </h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VwEmployeeSale[0].Employee)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VwEmployeeSale[0].DateOfSale)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VwEmployeeSale[0].PartSold)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VwEmployeeSale[0].QuantitySold)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VwEmployeeSale[0].PartCost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VwEmployeeSale[0].TotalSale)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.VwEmployeeSale[0].Type)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.VwEmployeeSale)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Employee)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOfSale)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartSold)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.QuantitySold)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PartCost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TotalSale)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Type)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <link href="../css/part.css" rel="stylesheet" />
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load("current", { packages: ["corechart"] });
+        google.charts.setOnLoadCallback(drawChart);
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ["PartName", "Quantity", { role: "style" }],
+                ["NVIDIA GeForce RTX 3060", 13, "#00AF00"],
+                ["NVIDIA GeForce RTX 3070", 7, "#00AF00"],
+                ["NVIDIA GeForce RTX 3080", 11, "#00AF00"],
+                ["NVIDIA GeForce RTX 3090", 7, "#00AF00"],
+                ["AMD Ryzen 5 5600X", 3, "#FF0000"],
+                ["AMD Ryzen 9 5900X", 8, "#FF0000"],
+                ["Intel Core i7-11700K", 19, "#0000FF"],
+                ["Intel Core i9-11900K", 20, "#0000FF"],
+                ["AMD Radeon RX 6600 XT", 9, "#8B0000"],
+                ["AMD Radeon RX 6700 XT", 13, "#8B0000"],
+                ["AMD Radeon RX 6800 XT", 11, "#8B0000"],
+                ["AMD Radeon RX 6900 XT", 6, " #8B0000"]
+
+
+
+
+
+            ]);
+
+            var view = new google.visualization.DataView(data);
+            view.setColumns([0, 1,
+                {
+                    calc: "stringify",
+                    sourceColumn: 1,
+                    type: "string",
+                    role: "annotation"
+                },
+                2]);
+
+            var options = {
+                title: "Total Quantity by Part",
+                width: 600,
+                height: 1200,
+                bar: { groupWidth: "95%" },
+                legend: { position: "none" },
+            };
+            var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
+            chart.draw(view, options);
+        }
+    </script>
+
+
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand"  href="/Index">Home</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        <li class="nav-item">
+                            <a href="/tblPart/Index" class="btn btn-primary">
+                                CRUD Pages
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/DataVisualization/MyViews/CustomerOrder" class="btn btn-primary">
+                                Views
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/DataVisualization/MyProcedures/CustomerTotal" class="btn btn-primary">
+                                Stored Procedures
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/DataVisualization/MyProcedures/SaleByDate" class="btn btn-primary">
+                                Stored Procedures With Parameters
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <h1>Static Part Chart</h1>
+    <div id="barchart_values" style="width: 900px; height: 300px;"></div>
+</body>
+</html>

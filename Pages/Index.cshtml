@@ -1,0 +1,25 @@
+﻿@page
+@model ProjectObryckiJustin.Pages.tblPart.IndexModel
+@{
+    var i = 0;
+    ViewData["Title"] = "Home page";
+}
+<link href="~/css/Home.css" rel="stylesheet" />
+<div class="text-center">
+    <h1 class="display-2" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">PC3Parts</h1>
+    <hr />
+    <h1 class="display-6" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Your source for high-quality PC Parts</h1>
+
+    @foreach (var item in Model.TblPart)
+    {
+        <buy-card>
+            <img class="Image" src="~/images/@(item.PartName).jpg" />
+            <p class="Part_Name"> @Html.DisplayFor(modelItem => item.PartName) </p>
+            <p class="Part_Desc"> @Html.DisplayFor(modelItem => item.PartDescription) </p>
+            <p class="Part_Cost"> $@Html.DisplayFor(modelItem => item.Cost) </p>
+            <a asp-page="/tblPart/Details" asp-route-id="@item.PartId" class="Buy_Button btn btn-primary">View Part</a>
+        </buy-card>
+        i += 1;
+    }
+
+</div>
